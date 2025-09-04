@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy7xv8m2j5qkt"]
+
+[ext_resource type="PackedScene" uid="uid://c7xr8v5j2hnpt" path="res://Player.tscn" id="1_y7xmr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(1280, 20)
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_y7xmr")]
+position = Vector2(640, 360)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="TopWall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(640, -10)
+shape = SubResource("RectangleShape2D_1")
+
+[node name="BottomWall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(640, 730)
+shape = SubResource("RectangleShape2D_1")
+
+[node name="LeftWall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-10, 360)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_1")
+
+[node name="RightWall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(1290, 360)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_1")
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -1
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.2, 0.3, 0.4, 1)

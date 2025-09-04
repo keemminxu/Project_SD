@@ -1,0 +1,19 @@
+# Godot 4 specific ignores
+.godot/
+
+# Import files
+*.import
+
+# Temporary files
+*.tmp
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Export templates
+export_presets.cfg
